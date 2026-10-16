@@ -33,8 +33,4 @@ In the film industry, accurate budget planning and revenue prediction are crucia
 ## 🛠️ Built With
 * **Language:** Python 3.10+
 * **Libraries:** Pandas, NumPy, Seaborn, Matplotlib
-* **Environment:** Kaggle Notebooks / Jupyter Notebook
-
-```text
-├── movie-data-analysis.ipynb   # Main Jupyter Notebook containing the full analysis
-└── README.md                   # Project documentation
+* **Environment:** Kaggle Notebooks
