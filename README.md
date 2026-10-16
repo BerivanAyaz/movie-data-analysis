@@ -1,23 +1,40 @@
-# TMDB Movie Metadata Project
+# 🎬 TMDB 5000 Movie Dataset - Exploratory Data Analysis & Preprocessing
 
-Project Description
-This project involves an analysis conducted on the TMDB Movie Metadata dataset available on Kaggle. The dataset contains metadata about various movies, and in-depth analyses will be performed on these data. The project focuses on analyzing and visualizing information about the movies (such as revenue, popularity, genres, etc.).
+This repository contains an end-to-end Exploratory Data Analysis (EDA) and Data Preprocessing pipeline performed on the popular **TMDB 5000 Movie Dataset** using Python. The project focuses on data cleaning strategies, handling missing values, correlation analysis, and feature engineering to derive actionable insights for movie production and revenue forecasting.
 
-Objective
-The primary goal of the project is to examine the data in the TMDB Movie Metadata dataset and perform meaningful analyses. These analyses aim to explore the relationships between movie performance, genres, popularity, and other attributes. Significant insights into the movies are expected to be drawn using data analysis and visualization techniques.
+---
 
-Technologies Used
-Python: For data analysis and visualization.
-Kaggle Notebook: The environment where analyses will be conducted.
-Kaggle TMDB Movie Metadata Dataset: The primary data source for analysis.
+## 🚀 Project Overview
+In the film industry, accurate budget planning and revenue prediction are crucial for maximizing Return on Investment (ROI). This notebook simulates real-world data science challenges by intentionally introducing missing data, cleaning it through robust statistical imputation, visualizing key relationships, and engineering new predictive features (such as ROI).
 
-Requirements
-The necessary Python libraries for the project must be installed within the notebook.
+---
 
-Starting Point
-Download the Dataset: The TMDB Movie Metadata dataset will be downloaded from Kaggle.
+## 📊 Key Steps & Methodology
 
-Subsequent Stages
-Following the steps in the ipynb file in the repository, a conclusion and recommendations will be made.
+1. **Environment & Libraries Setup:**
+   * Utilized core data analysis libraries: `Pandas`, `NumPy`, `Seaborn`, `Matplotlib`, and `ast`.
+2. **Missing Data Simulation & Handling:**
+   * Injected a 5% random missing value rate (`NaN`) to simulate real-world data imperfections.
+   * Dropped highly sparse or irrelevant columns (`homepage`, `tagline`, `id`).
+   * Imputed numerical columns using **Mean** (`runtime`, `vote_average`, `vote_count`) and **Median** (`budget`, `revenue`, `popularity`) to handle skewness.
+   * Imputed categorical columns using the **Mode** and text columns (`title`, `overview`) with `"Unknown"` to maintain data integrity.
+3. **Exploratory Data Analysis (EDA) & Visualization:**
+   * Visualized distributions of numerical variables (Budgets, Popularity, Vote Averages) and categorical variables (Original Languages, Movie Status).
+   * Analyzed correlation matrices using heatmaps to discover strong positive/negative relationships between budget, revenue, and vote counts.
+4. **Feature Engineering:**
+   * Extracted primary genres from JSON-like structured strings using `ast.literal_eval`.
+   * Created a new financial metric: **ROI (Return on Investment)** calculated via `revenue / budget`.
+   * Applied One-Hot Encoding to categorical features (`original_language`, `status`, `main_genre`) for future machine learning model readiness.
+5. **Business Scenario & Model Proposal:**
+   * Outlined a complete business case for a media company aiming to forecast movie revenues and optimize budget allocation using a **Random Forest Regressor**.
 
-Kaggle Notebook Link: https://www.kaggle.com/code/berivanayaz/movie-data-analysis
+---
+
+## 🛠️ Built With
+* **Language:** Python 3.10+
+* **Libraries:** Pandas, NumPy, Seaborn, Matplotlib
+* **Environment:** Kaggle Notebooks / Jupyter Notebook
+
+```text
+├── movie-data-analysis.ipynb   # Main Jupyter Notebook containing the full analysis
+└── README.md                   # Project documentation
